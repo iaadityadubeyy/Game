@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FUSIONARY - Music Platform</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="preloader">
+    <div class="musical-waves"></div>
+  </div>
+  
+  
+  <header>
+    <div class="header-content">
+      <h1 class="main-heading">FUSIONARY</h1>
+      
+      <h2 class="subheading">One Word, One Beat.</h2>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#section2">What is Fusionary</a></li>
+        <li><a href="#section3" onclick="animateDownload();">Download</a></li>
+      </ul>
+    </nav>
+    <div class="toggleMenu" onclick="menuToggle();"></div>
+  </header>
+
+  <section class="section1" id="home">
+    <div class="section1-content">
+      <h3 class="subheading2">Welcome to Fusionary</h3>
+      <p>Fusionary is a music community app! Connect, collaborate, and groove with fellow musicians worldwide. 
+        Share your melodies, find your rhythm, and harmonize with like-minded artists. Together, let's create an unstoppable symphony of talent and creativity. 
+        Join the beat, let the music flow! 🎵🌟</p>
+      
+    </div>
+  </section>
+
+  <section class="section2" id="section2">
+    <div class="section2-content">
+      <h3 class="subheading2">What is Fusionary?</h3>
+      <p>Fusionary is a collaborative platform for music performers and artists across genres. 
+        It allows users to come together to create and collaborate on music. 
+        The platform is not just for collaboration, but also serves as a one-stop-shop for music exploration. 
+        Users can upload their own music, attend events, learn new skills, and push their boundaries in the musical world of Fusionary.</p>
+    </div>
+  </section>
+
+  <section class="section3" id="section3">
+    <div class="section3-content">
+      <div class="download-section">
+        <h3 class="subheading2">Download Fusionary</h3>
+        <button class="download-button" onclick="animateDownload();">Click Here</button>
+        <div class="music-waves"></div> 
+      </div>
+    </div>
+  </section>
+  
+
+  <div class="musical-notes">
+    <div class="note note1"></div>
+    <div class="note note2"></div>
+    <div class="note note3"></div>
+    <div class="note note4"></div>
+    <div class="note note5"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    function menuToggle() {
+    }
+
+    function animateDownload() {
+      const downloadButton = document.querySelector('.download-button');
+      downloadButton.style.animation = 'buttonClickAnimation 0.5s ease';
+      setTimeout(() => {
+        downloadButton.style.animation = '';
+      }, 500);
+    }
+
+    setTimeout(function() {
+      document.querySelector('.preloader').style.display = 'none';
+    }, 1000);
+
+    anime({
+      targets: '.main-heading',
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 1500,
+      delay: 500
+    });
+
+    anime({
+      targets: '.subheading',
+      translateY: [100, 0],
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 1500,
+      delay: 800
+    });
+
+    anime({
+      targets: '.subheading2',
+      translateY: [100, 0],
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 1500,
+      delay: 1200
+    });
+
+    anime({
+      targets: '.musical-notes .note',
+      translateY: [-30, 30],
+      scale: [0.7, 1.5],
+      rotate: [0, 360],
+      easing: 'easeInOutQuad',
+      duration: 2500,
+      loop: true,
+      direction: 'alternate'
+    });
+
+    const sections = document.querySelectorAll('section');
+
+    function animateOnScroll() {
+      const triggerBottom = (window.innerHeight / 5) * 4;
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); 
+
+    function animateDownload() {
+  const downloadButton = document.querySelector('.download-button');
+  downloadButton.style.animation = 'buttonClickAnimation 0.5s ease';
+  setTimeout(() => {
+    downloadButton.style.animation = '';
+  }, 500);
+
+  const musicWaves = document.querySelector('.music-waves');
+  musicWaves.style.opacity = '1';
+  setTimeout(() => {
+    musicWaves.style.opacity = '0';
+  }, 2000); 
+}
+  </script>
+</body>
+</html>

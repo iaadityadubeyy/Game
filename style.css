@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300,400,500,600,700,800,900&display=swap');
+
+body {
+  background: #111;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(to bottom, #800080, #000000);
+  color: #fff;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-heading {
+  font-size: 7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 8cm;
+}
+
+.subheading {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+}
+
+.navigation {
+  text-align: right;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+}
+
+.navigation ul li a {
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.section1 {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section1.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section1-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subheading2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: #fff;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.section2 {
+  position: relative;
+  background: linear-gradient(to bottom, #600060, #000000); 
+  color: #fff;
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section2.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section2-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.section2.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section2-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section3 {
+  position: relative;
+  background-color: #black;
+  color: #fff;
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section3.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section3-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.download-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.download-button {
+  background-color: #fff;
+  color: #800080;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px 20px; /* Adjusted padding to make the button smaller */
+  cursor: pointer;
+  font-size: 1.2rem; /* Adjusted font size to fit the smaller button */
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+@keyframes musicWaveAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+.download-button:hover {
+  background-color: #800080;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+.musical-notes {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.note {
+  width: 20px;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  animation: noteAnimation 1.5s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.note::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #EEBEFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.note::after {
+  content: "";
+  width: 1px;
+  height: 40px;
+  background-color: #EEBEFF;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+}
+
+.note.note1 {
+  top: 10%;
+  left: 10%;
+}
+
+.note.note2 {
+  top: 20%;
+  left: 15%;
+}
+
+.note.note3 {
+  top: 30%;
+  left: 20%;
+}
+
+.note.note4 {
+  top: 40%;
+  left: 25%;
+}
+
+.note.note5 {
+  top: 50%;
+  left: 30%;
+}
+
+@keyframes noteAnimation {
+  0% {
+    transform: scaleY(1) translateY(0);
+  }
+  100% {
+    transform: scaleY(1.5) translateY(-20px);
+  }
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.musical-waves {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.musical-waves::before,
+.musical-waves::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #EEBEFF;
+  border-radius: 50%;
+  animation: musicalWave 2s linear infinite;
+}
+
+.musical-waves::before {
+  animation-delay: 0.5s;
+}
+
+@keyframes musicalWave {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+.cta-button {
+  background-color: #800080;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.cta-button:hover {
+  background-color: #600060;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(128, 0, 128, 0.3); 
+}
+
+.cta-button:active {
+  background-color: #600060;
+  transform: scale(0.95);
+  box-shadow: none; 
+}
+
+
